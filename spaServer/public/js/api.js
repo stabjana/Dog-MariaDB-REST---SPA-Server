@@ -1,6 +1,6 @@
 'use strict';
 
-const API_URL = "http//localhost:4000/api/dogs";
+const API_URL = "http://localhost:4000/api/dogs";
 
 async function fetchDogs() {
     const response = await fetch(API_URL);

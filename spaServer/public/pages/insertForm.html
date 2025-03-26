@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/basicStyles.css">
-    <script type="module" src="/js/inputHandler.js"></script>
+    <script type="module">
+        import { handleAddDog } from './js/handlers.js';
+        handleAddDog();
+    </script>
+
 </head>
+
 <body>
     <main>
-        <h1>Add Computer</h1>
+        <h1>Add Dog</h1>
         <form id="form">
             <div id="fields">
-                <label>Id: <input type="text" name="id"></label>
+                <label>Number: <input type="text" name="number"></label>
                 <label>Name: <input type="text" name="name"></label>
-                <label>Price: <input type="text" name="price"></label>
-                <label>Type: <input type="text" name="type"></label>
+                <label>Weight in Kg: <input type="text" name="weightKg"></label>
+                <label>Breed: <input type="text" name="breed"></label>
+                <label>Year of Birth: <input type="text" name="birth"></label>
             </div>
             <div>
                 <button type="submit">Submit</button>
@@ -26,4 +33,5 @@
         <a href="/"><button>Menu</button></a>
     </main>
 </body>
+
 </html>
