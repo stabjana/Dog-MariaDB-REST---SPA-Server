@@ -1,19 +1,20 @@
 {
-    "getAll":[
-        "number, name, weightKg, breed, yearOfBirth from dog"
+    "getAll": [
+        "select number, name, weightKg, breed, yearOfBirth from dog"
     ],
-    "getOne":[
-        "number, name, weightKg, breed,yearOfBirth from dog where number=?"
+    "getOne": [
+        "select number, name, weightKg, breed, yearOfBirth from dog where number=?"
     ],
-    "insert":[
-        "insert into dog (number, name, weightKg, breed, yearOfBirth)",
-        "values(?,?,?,?,?)"
+    "insert": [
+        "insert into dog (number, name, weightKg, breed, yearOfBirth) values(?,?,?,?,?)"
     ],
-    "update":[
+    "update": [
         "update dog set name=?, weightKg=?, breed=?, yearOfBirth=? where number=?"
     ],
-    "remove":["delete from dog where number=?"],
+    "remove": [
+        "delete from dog where number=?"
+    ],
     
-    "primary_key":"number",
-    "resource":"dog"
+    "primary_key": "number",
+    "resource": "dog"
 }
