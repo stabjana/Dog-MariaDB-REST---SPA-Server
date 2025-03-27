@@ -11,7 +11,7 @@ export async function handleGetAllDogs() {
             <td>${dog.name}</td>
             <td>${dog.weightKg}</td>
             <td>${dog.breed}</td>
-            <td>${dog.birth}</td>
+            <td>${dog.yearOfBirth}</td>
         </tr>
     `).join('');
 }
@@ -32,7 +32,7 @@ export function handleGetOneDog() {
             <p><strong>Name:</strong> ${dog.name}</p>
             <p><strong>Weight:</strong> ${dog.weightKg} kg</p>
             <p><strong>Breed:</strong> ${dog.breed}</p>
-            <p><strong>Birth:</strong> ${dog.birth}</p>
+            <p><strong>Birth:</strong> ${dog.yearOfBirth}</p>
         ` : "Dog not found.";
     });
 }

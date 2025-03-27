@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="/styles/basicStyles.css">
     <script type="module">
         import { handleRemoveDog } from '../js/handlers.js';
-        handleRemoveDog();
+        document.addEventListener("DOMContentLoaded", handleRemoveDog);
     </script>
+
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <h1>Remove one Dog</h1>
         <label>Number: <input type="text" id="dogNumber"></label>
         <div>
-            <button id="postbutton">post</button>
+            <button id="deleteButton">Delete</button>
         </div>
         <div id="resultarea"></div>
         <a href="/"><button>Menu</button></a>
