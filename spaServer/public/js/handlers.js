@@ -1,4 +1,4 @@
-import { fetchDogs, fetchDog, addDog, deleteDog } from './api.js';
+import { fetchDogs, fetchDog, addDog, updateDog, deleteDog } from './api.js';
 
 // get all dogs
 export async function handleGetAllDogs() {
@@ -54,6 +54,54 @@ export function handleAddDog() {
         document.querySelector("#resultarea").innerHTML = result.message || "Dog added successfully!";
     });
 }
+
+// update dog
+
+// fetches dog for update
+export function handleFetchDogForUpdate() {
+    document.querySelector("#fetchDogButton").addEventListener("click", async () => {
+        const number = document.querySelector("#dogNumber").value;
+        const resultArea = document.querySelector("#resultarea");
+        const form = document.querySelector("#update-form");
+
+        if (!number) {
+            resultArea.innerHTML = "Please enter a dog number.";
+            return;
+        }
+
+        const dog = await fetchDog(number);
+
+        if (dog) {
+            document.querySelector("input[name='name']").value = dog.name;
+            document.querySelector("input[name='weightKg']").value = dog.weightKg;
+            document.querySelector("input[name='breed']").value = dog.breed;
+            document.querySelector("input[name='birth']").value = dog.yearOfBirth;
+
+            form.style.display = "block";
+        } else {
+            resultArea.innerHTML = "Dog not found.";
+        }
+    });
+}
+
+// Saves changes
+export function handleUpdateDog() {
+    document.querySelector("#update-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const dog = {
+            number: document.querySelector("#dogNumber").value,
+            name: document.querySelector("input[name='name']").value,
+            weightKg: document.querySelector("input[name='weightKg']").value,
+            breed: document.querySelector("input[name='breed']").value,
+            birth: document.querySelector("input[name='birth']").value
+        };
+
+        const result = await updateDog(dog);
+        document.querySelector("#resultarea").innerHTML = result.message || "Dog updated successfully!";
+    });
+}
+
 
 // remove dog
 export function handleRemoveDog() {

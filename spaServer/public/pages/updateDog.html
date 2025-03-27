@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Dog</title>
+    <link rel="stylesheet" href="/styles/basicStyles.css">
+    <script type="module">
+        import { handleFetchDogForUpdate, handleUpdateDog } from '../js/handlers.js';
+        handleFetchDogForUpdate();
+        handleUpdateDog();
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Update Dog</h1>
+        <label>Number: <input type="text" id="dogNumber"></label>
+        <button id="fetchDogButton">Fetch Dog</button>
+
+        <form id="update-form" style="display: none;">
+            <div id="fields">
+                <label>Name: <input type="text" name="name"></label>
+                <label>Weight in Kg: <input type="text" name="weightKg"></label>
+                <label>Breed: <input type="text" name="breed"></label>
+                <label>Year of Birth: <input type="text" name="birth"></label>
+            </div>
+            <div>
+                <button type="submit">Save Changes</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+        <div id="resultarea"></div>
+        <a href="/"><button>Menu</button></a>
+    </main>
+</body>
+
+</html>
